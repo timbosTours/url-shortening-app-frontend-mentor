@@ -2,7 +2,10 @@ import React from 'react'
 
 function MyForm() {
   return (
-    <div>MyForm</div>
+    <form>
+      <input type="text" placeholder="Shorten a link here..." />
+      <button type="submit">Shorten It!</button>
+    </form>
   )
 }
 
