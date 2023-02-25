@@ -9,7 +9,7 @@ function MyForm() {
       console.log(data)
     })}> 
       <input {...register("text") }placeholder="Shorten a link here" />
-      <button type="submit">Shorten It!</button>
+      <button {...register("submit")}>Shorten It!</button>
     </form>
   )
 }

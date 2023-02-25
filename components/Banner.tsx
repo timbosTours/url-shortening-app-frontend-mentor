@@ -8,8 +8,8 @@ function Banner() {
     return (
         <>
             <Navbar />
-            <h2>More than just shorter links</h2>
-            <p>Build your brand's recognition and get detailed insights on how your links are performing.</p>
+            <h2 tabIndex={0}>More than just shorter links</h2>
+            <p tabIndex={0}>Build your brand's recognition and get detailed insights on how your links are performing.</p>
             <Link href="/">Get Started</Link>
             <MyForm />
         </>
