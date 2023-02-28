@@ -11,7 +11,7 @@ function MainContent() {
       <div>
         <span>
           <h3 tabIndex={0}>Brand Recognition</h3>
-          <p tabIndex={0}>Boost your brand recognition with each click. Generic links don’t mean a thing. Branded links help instil confidence in your content.</p>
+          <p tabIndex={0}>Boost your brand recognition with each click. Generic links don't mean a thing. Branded links help instil confidence in your content.</p>
         </span>
         <span>
           <h3 tabIndex={0}>Detailed Records</h3>
