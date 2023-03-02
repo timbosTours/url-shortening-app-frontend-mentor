@@ -8,6 +8,7 @@ function MyForm() {
   let searchLink = useRef<undefined>()
   let shortLink = useRef<null>()
 
+
   return (
     <>
     <form onSubmit={handleSubmit(async (data) => {
@@ -21,7 +22,7 @@ function MyForm() {
       }
     })}> 
       <input {...register("text") } placeholder="Shorten a link here" />
-      <button type='submit'>Shorten It!</button>
+        <button type='submit' onClick={() => { console.log('clicked') }}>Shorten It!</button>
       </form>
       
       {shortLink.current && 
