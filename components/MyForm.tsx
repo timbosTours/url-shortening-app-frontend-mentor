@@ -1,15 +1,26 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
 
 
 function MyForm() {
   const { register, handleSubmit } = useForm()
-  let searchLink = useRef<undefined>()
-  let shortLink = useRef<null>()
+  let searchLink = useRef<string>()
+  let shortLink = useRef<string>()
 
 
+  function setStore() {
+      window.localStorage.setItem("SEARCH_LINK", JSON.stringify(searchLink.current))
+      window.localStorage.setItem("SHORT_LINK", JSON.stringify(shortLink.current))
+  }
+
+  // useEffect(() => {
+  //   const storedLinks = window.localStorage.getItem("SEARCH_LINK")
+  // }, [searchLink])
+
+  
   return (
+
     <>
     <form onSubmit={handleSubmit(async (data) => {
         
@@ -22,10 +33,10 @@ function MyForm() {
       }
     })}> 
       <input {...register("text") } placeholder="Shorten a link here" />
-        <button type='submit' onClick={() => { console.log('clicked') }}>Shorten It!</button>
+        <button type='submit' onClick={setStore}>Shorten It!</button>
       </form>
       
-      {shortLink.current && 
+      {shortLink && 
       
           <p>{shortLink.current}</p>  
       }
