@@ -57,7 +57,8 @@ function setStore(searchLink: string, shortLink: string) {
   return (
     <div key={_data.output}>
       <p>{ _data.input }</p>
-      <p>{ _data.output }</p>
+      <p>{_data.output}</p>
+      <button onClick={() => {navigator.clipboard.writeText(_data.output)}} >Copy!</button>
     </div>
   )
 })}
