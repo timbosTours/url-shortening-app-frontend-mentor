@@ -12,11 +12,8 @@ function MyForm() {
   const { register, handleSubmit } = useForm()
   let searchLink = useRef<string>("")
   let shortLink = useRef<string>("")
-  const [data, setData] = useState<Data[]>([])
+  const [returnedData, setData] = useState<Data[]>([])
 
-  // useEffect(() => {
-  //   window.localStorage.getItem("SEARCH_LINK")
-  // }, [shortLink])
 
     useEffect(() => {
     const storedData = localStorage.getItem("data");
@@ -25,9 +22,15 @@ function MyForm() {
     }
   }, []);
 
-  function setStore() {
-      window.localStorage.setItem("SEARCH_LINK", JSON.stringify(searchLink.current))
-      window.localStorage.setItem("SHORT_LINK", JSON.stringify(shortLink.current))
+function setStore(searchLink: string, shortLink: string) {
+    const existingData = localStorage.getItem("links")
+    if (existingData) {
+      const newData = JSON.parse(existingData)
+      newData.push({ input: searchLink, output: shortLink })
+      localStorage.setItem("links", JSON.stringify(newData))
+    } else {
+      localStorage.setItem("links", JSON.stringify([{ input: searchLink, output: shortLink }]))
+    }
   }
 
 
@@ -40,23 +43,24 @@ function MyForm() {
           const resp = await axios.post(`https://api.shrtco.de/v2/shorten?url=${data.text}`);
           searchLink.current = data.text
           shortLink.current = resp.data.result.short_link
-          setData([])
+          setData([...returnedData,{ input: searchLink.current, output: shortLink.current }])
+          setStore(JSON.stringify(searchLink), JSON.stringify(shortLink))
       } catch (error: any) {
         console.log(error)
       }
     })}> 
       <input {...register("text") } placeholder="Shorten a link here" />
-        <button type='submit' onClick={setStore}>Shorten It!</button>
+        <button type='submit'>Shorten It!</button>
       </form>
 
-
-      {data && 
-      
-          <p>{shortLink.current}</p>  
-      }
-      {searchLink.current && 
-        <p>{ searchLink.current }</p>
-      }
+      {returnedData.map((_data) => {
+  return (
+    <div key={_data.output}>
+      <p>{ _data.input }</p>
+      <p>{ _data.output }</p>
+    </div>
+  )
+})}
     </>
   )
 }
