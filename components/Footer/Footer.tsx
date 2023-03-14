@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import React from 'react'
-import Image from 'next/image'
+import styles from './Footer.module.scss'
 
 function Footer() {
   return (
-    <footer>
+    <footer className={styles.footer}>
       <h2>
         <Link href="/">Shortly</Link>
       </h2>

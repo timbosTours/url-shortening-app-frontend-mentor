@@ -1,10 +1,11 @@
 import Link from 'next/link'
 import React from 'react'
+import styles from './maincontent.module.scss'
 
 function MainContent() {
   return (
-    <>
-      <div tabIndex={-1}>
+    <div className={styles.maincontent}>
+      <div  tabIndex={-1}>
       <h2 tabIndex={0}>Advanced Statistics</h2>
         <p tabIndex={0}>Track how your links are performing accross the web with our advanced statistics dashbaord.</p>
       </div>
@@ -26,7 +27,7 @@ function MainContent() {
         <h2 tabIndex={0}>Boost your links today</h2>
         <Link href="/">Get Started</Link>
       </div>
-    </>
+    </div>
   )
 }
 

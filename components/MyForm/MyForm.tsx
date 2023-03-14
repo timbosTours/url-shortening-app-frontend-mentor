@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
+import styles from './MyForm.module.scss'
 
 
 interface Data {
@@ -37,7 +38,7 @@ function setStore(searchLink: string, shortLink: string) {
   return (
 
     <>
-    <form onSubmit={handleSubmit(async (data) => {
+    <form className={styles.myform} onSubmit={handleSubmit(async (data) => {
         
         try {
           const resp = await axios.post(`https://api.shrtco.de/v2/shorten?url=${data.text}`);
