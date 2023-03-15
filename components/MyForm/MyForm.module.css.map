@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AACI,OADG,CACH,MAAM,CAAC;EACH,KAAK,EAAE,MAAM;CAChB",
+    "sources": [
+        "MyForm.module.scss"
+    ],
+    "names": [],
+    "file": "MyForm.module.css"
+}
