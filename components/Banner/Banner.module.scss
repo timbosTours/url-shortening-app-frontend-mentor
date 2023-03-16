@@ -1,7 +1,11 @@
+@use'../../styles/variables' as v;
+
 .banner {
-    color: red;
 
     h2 {
-        color: blue;
+        color: v.$very-dar-blue;
     }
+    p {
+        color: v.$grayish-violet
+    };
 }

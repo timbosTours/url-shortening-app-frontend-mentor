@@ -1,3 +1,7 @@
+@use'../../styles/variables' as v;
+
 .navbar {
-    color: orange;
+    h1 {
+        color: v.$very-dark-violet
+    }
 }
