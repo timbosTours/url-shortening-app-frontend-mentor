@@ -1,8 +1,12 @@
 @use'../../styles/variables' as v;
 
 .navbar {
-    float: unset;
+    
     h1 {
-        color: v.$very-dark-violet
+        color: v.$very-dark-violet;
+        font-size: xx-large;
+    }
+    ul {
+        display: none;
     }
 }
