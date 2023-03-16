@@ -1,6 +1,7 @@
 @use'../../styles/variables' as v;
 
 .navbar {
+    float: unset;
     h1 {
         color: v.$very-dark-violet
     }

@@ -4,7 +4,6 @@ import styles from '@/styles/Home.module.scss'
 import Banner from '@/components/Banner/Banner'
 import MainContent from '@/components/MainContent/MainContent'
 import Footer from '@/components/Footer/Footer'
-import globals from '..styles/globals.scss'
 
 
 const inter = Inter({ subsets: ['latin'] })

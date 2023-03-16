@@ -1,8 +1,15 @@
 @use'../../styles/variables' as v;
 
 .banner {
+    
+    svg{
+        width: 100%;
+        position: absolute;
+        z-index: -100;
+    }
 
     h2 {
+        padding-top: 30rem;
         color: v.$very-dar-blue;
     }
     p {
