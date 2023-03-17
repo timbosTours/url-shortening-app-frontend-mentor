@@ -1,6 +1,8 @@
 @use'../../styles/variables' as v;
 
 .navbar {
+    display: flex;
+    justify-content: space-between;
     
     h1 {
         color: v.$very-dark-violet;
@@ -9,5 +11,20 @@
     }
     ul {
         display: none;
+    }
+    .IconWrapper{
+        // border: 1px solid red;s
+        width: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 25px;
+        margin-top: 1.85em;
+        margin-right: .6em;
+    }
+    svg{
+        fill: v.$grayish-violet;
+        height: 20px;
     }
 }
