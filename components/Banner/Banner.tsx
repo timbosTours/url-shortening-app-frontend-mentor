@@ -11,8 +11,8 @@ const poppins = Poppins({ subsets: ['latin-ext'], weight: ["500", "700"] })
 function Banner() {
     return (
         <div className={styles.banner}>
-            <BannerImage/>
             <Navbar />
+            <BannerImage />
             <h2 className={poppins.className} tabIndex={0}>More than just <br /> shorter links</h2>
             <p tabIndex={0}>Build your brand's recognition and get detailed insights on how your links are performing.</p>
             <Link href="/">Get Started</Link>

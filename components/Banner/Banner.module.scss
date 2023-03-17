@@ -1,22 +1,26 @@
 @use'../../styles/variables' as v;
 
 .banner {
-    svg{
-        position: absolute;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        z-index: -100;
+    .imageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+    }
+
+    svg {
+    width: 100%;
+    z-index: -100;
     }
 
     h2 {
-        padding-top: 30rem;
-        color: v.$very-dar-blue;
-        text-align: center;
-        margin: 0.5em;
-        font-size: xx-large;
+    color: v.$very-dar-blue;
+    text-align: center;
+    margin: 0.5em;
+    font-size: xx-large;
     }
+
     p {
-        color: v.$grayish-violet
-    };
+    color: v.$grayish-violet;
+    }
 }
