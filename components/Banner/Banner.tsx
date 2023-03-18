@@ -15,7 +15,7 @@ function Banner() {
             <BannerImage />
             <h2 className={poppins.className} tabIndex={0}>More than just <br /> shorter links</h2>
             <p tabIndex={0}>Build your brand's recognition and get detailed insights on how your links are performing.</p>
-            <Link href="/">Get Started</Link>
+            <Link href="/" className={styles.getStarted}>Get Started</Link>
             <MyForm />
         </div>
     )

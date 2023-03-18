@@ -50,7 +50,7 @@ function setStore(searchLink: string, shortLink: string) {
         console.log(error)
       }
     })}> 
-      <input {...register("text") } placeholder="Shorten a link here" />
+      <input {...register("text") } placeholder="Shorten a link here..." />
         <button type='submit'>Shorten It!</button>
       </form>
 
