@@ -1,6 +1,10 @@
 @use'../../styles/variables' as v;
 
 .banner {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 5em;
     
     .imageContainer {
     display: flex;
@@ -26,16 +30,18 @@
     text-align: center;
     padding: 1.5em;
     padding-top: 0.5em;
+    margin-bottom: 1.5em;
     }
     .getStarted{
         background-color: v.$cyan;
         padding: 1em;
-        display: flex;
-        justify-content: center;
-        // align-items: center;
-        // height: 100%;
-        // width: 10em;
-        border-radius: 25em;
+        padding-left: 3em;
+        padding-right: 3em;
+        text-align: center;
         color: white;
+        border-radius: 30px;
+        font-size: large;
+        letter-spacing: 0.5px;
+        font-weight: 500;
     }
 }

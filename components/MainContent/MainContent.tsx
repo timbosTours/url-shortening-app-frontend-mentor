@@ -1,10 +1,12 @@
 import Link from 'next/link'
 import React from 'react'
+import MyForm from '../MyForm/MyForm'
 import styles from './maincontent.module.scss'
 
 function MainContent() {
   return (
     <div className={styles.maincontent}>
+      <MyForm/>
       <div  tabIndex={-1}>
       <h2 tabIndex={0}>Advanced Statistics</h2>
         <p tabIndex={0}>Track how your links are performing accross the web with our advanced statistics dashbaord.</p>

@@ -1,5 +1,9 @@
+@use './variables' as v;
+
 * {
     text-decoration: none;
     margin: 0;
     padding: 0;
+    justify-content: center;
+    font-family: v.$poppins;
 }
