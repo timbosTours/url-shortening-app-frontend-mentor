@@ -1,5 +1,5 @@
 @use'../../styles/variables' as v;
-@use '../../styles/breakpoints' as b;
+@import '../../styles/breakpoints';
 
 .navbar {
     display: flex;
@@ -12,7 +12,9 @@
         
     }
     ul {
+        @include md {
         display: none;
+    }
     }
     .IconWrapper{
         width: 30px;
@@ -24,8 +26,11 @@
         margin-top: 1.85em;
         margin-right: 1em;
 
-        
+        @include md-greater {
+            display: none;
+        }
     }
+
     svg{
         fill: v.$grayish-violet;
         height: 20px;

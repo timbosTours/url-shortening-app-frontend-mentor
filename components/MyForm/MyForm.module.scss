@@ -7,21 +7,6 @@
     button {
         color: purple;
         
-        @include xs {
-            color: red;
-        }
-        @include sm {
-            color: blue;
-        }
-        @include md {
-            color: hotpink;
-        }
-        @include lg {
-            color: orange;
-        }
-        @include xl {
-            color: yellow;
-        }
     }
 
 
