@@ -11,7 +11,7 @@ function Navbar() {
         <nav className={styles.navbar}>
             <Link href="/"><h1>Shortly</h1></Link>
             <HamburgerIcon/>
-            <ul>
+            <ul className={styles.mainNavLinks}>
                 <Link href="/">Features</Link>
                 <Link href="/">Pricing</Link>
                 <Link href="/">Resources</Link>
