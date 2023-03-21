@@ -3,9 +3,11 @@ import React from 'react'
 import styles from './Navbar.module.scss'
 import HamburgerIcon from './HamburgerIcon'
 
-
 function Navbar() {
+    
+
     return (
+        <>
         <nav className={styles.navbar}>
             <Link href="/"><h1>Shortly</h1></Link>
             <HamburgerIcon/>
@@ -16,7 +18,8 @@ function Navbar() {
                 <Link href="/">Login</Link>
                 <Link href="/">Sign Up</Link>
             </ul>
-        </nav>
+            </nav>
+        </>
     )
 }
 
