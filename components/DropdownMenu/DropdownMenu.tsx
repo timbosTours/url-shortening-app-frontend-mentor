@@ -5,14 +5,13 @@ import styles from './DropdownMenu.module.scss'
 function DropDownMenu() {
     return (
         <div className={styles.dropdownMenu}>
-            <h3>hello</h3>
             <nav >
-            <ul>
-                <Link href="/">Features</Link>
-                <Link href="/">Pricing</Link>
-                <Link href="/">Resources</Link>
-                <Link href="/">Login</Link>
-                <Link href="/">Sign Up</Link>
+            <ul className={styles.dropDownLinks}>
+                <li><Link href="/">Features</Link></li>
+                <li><Link href="/">Pricing</Link></li>
+                <li ><Link href="/">Resources</Link></li>
+                <li><Link href="/">Login</Link></li>
+                <li><Link href="/">Sign Up</Link></li>
                 </ul>
             </nav>
         </div>

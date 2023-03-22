@@ -12,11 +12,11 @@ function Navbar() {
             <Link href="/"><h1>Shortly</h1></Link>
             <HamburgerIcon/>
             <ul className={styles.mainNavLinks}>
-                <Link href="/">Features</Link>
-                <Link href="/">Pricing</Link>
-                <Link href="/">Resources</Link>
-                <Link href="/">Login</Link>
-                <Link href="/">Sign Up</Link>
+                <li><Link href="/">Features</Link></li>
+                <li><Link href="/">Pricing</Link></li>
+                <li><Link href="/">Resources</Link></li>
+                <li><Link href="/">Login</Link></li>
+                <li><Link href="/">Sign Up</Link></li>
             </ul>
             </nav>
         </>

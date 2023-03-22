@@ -4,6 +4,7 @@
 .navbar {
     display: flex;
     justify-content: space-between;
+    color: white;
     
     h1 {
         color: v.$very-dark-violet;
@@ -24,7 +25,7 @@
         text-align: center;
         height: 25px;
         margin-top: 1.85em;
-        margin-right: 1em;
+        margin-right: 1.5em;
 
         @include md-greater {
             display: none;

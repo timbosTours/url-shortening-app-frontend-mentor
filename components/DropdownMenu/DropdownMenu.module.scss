@@ -1,5 +1,37 @@
+@use '../../styles/variables' as v;
 @import '../../styles/breakpoints';
 
-.dropDownLinks{
-    color: red;
-}
+.dropdownMenu {
+    background-color: v.$dark-violet;
+    position: absolute;
+    height: 22em;
+    top: 5em;
+    right: 1.5em;
+    border-radius: 10px;
+    
+
+    nav {
+        margin: .5em;
+        width: 18em;
+
+        ul {
+            margin: 1em;
+            
+            li {
+                list-style: none;
+                margin: 2.2em;
+                
+                
+                a {
+                    
+                    color: white;
+
+                    
+                }
+            }
+        }
+    }
+        
+    
+}    
+
