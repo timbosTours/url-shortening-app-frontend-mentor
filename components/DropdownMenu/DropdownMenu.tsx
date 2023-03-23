@@ -9,9 +9,9 @@ function DropDownMenu() {
             <ul className={styles.dropDownLinks}>
                 <li><Link href="/">Features</Link></li>
                 <li><Link href="/">Pricing</Link></li>
-                <li ><Link href="/">Resources</Link></li>
-                <li><Link href="/">Login</Link></li>
-                <li><Link href="/">Sign Up</Link></li>
+                    <li className={styles.resources}><Link href="/">Resources</Link></li>
+                <li className={styles.loginButton}><Link href="/">Login</Link></li>
+                <span><li className={styles.signUpButton}><Link href="/">Sign Up</Link></li></span>
                 </ul>
             </nav>
         </div>

@@ -1,6 +1,7 @@
 @use '../../styles/variables' as v;
 @import '../../styles/breakpoints';
 
+
 .dropdownMenu {
     background-color: v.$dark-violet;
     position: absolute;
@@ -8,30 +9,37 @@
     top: 5em;
     right: 1.5em;
     border-radius: 10px;
-    
+
 
     nav {
         margin: .5em;
         width: 18em;
-
-        ul {
-            margin: 1em;
-            
-            li {
-                list-style: none;
-                margin: 2.2em;
-                
-                
-                a {
-                    
-                    color: white;
-
-                    
-                }
-            }
-        }
     }
+    ul {
+        margin: 1em;
+
+    }
+    li {
+        list-style: none;
+        margin: 2.2em;
+
         
+    }
+    a {
+        
+        color: white;
+        
+        
+    }
     
-}    
+    
+    
+    }    
+
+.signUpButton {
+    background-color: v.$cyan;
+    padding: .6em 3em .6em 3em ;
+    border-radius: 30px;
+}
+    
 
