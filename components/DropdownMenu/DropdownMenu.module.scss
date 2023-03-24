@@ -5,7 +5,7 @@
 .dropdownMenu {
     background-color: v.$dark-violet;
     position: absolute;
-    height: 22em;
+    height: 24em;
     top: 5em;
     right: 1.5em;
     border-radius: 10px;
@@ -14,27 +14,36 @@
     nav {
         margin: .5em;
         width: 18em;
+        // border: 1px solid red;
     }
     ul {
         margin: 1em;
+        // border: 1px solid yellow;
 
     }
     li {
         list-style: none;
-        margin: 2.2em;
-
-        
+        margin: 2.1em;
+        // border: 1px solid hotpink;
+        margin-left: 0em;
+        margin-right: 0em;
     }
     a {
         
         color: white;
-        
+        // border: 1px solid orange;
         
     }
+    }  
     
+.resources {
+        border-bottom: 1px solid v.$grayish-violet;
+        padding-bottom: 2.5em;
+    }
+
+.loginButton {
     
-    
-    }    
+}
 
 .signUpButton {
     background-color: v.$cyan;
