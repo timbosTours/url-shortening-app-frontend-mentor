@@ -12,31 +12,45 @@
         margin: 0.5em;
         
     }
-    .mainNavLinks {
-        @include md {
-        display: none;
-    }
-    }
-    .IconWrapper{
-        width: 30px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        height: 25px;
-        margin-top: 1.85em;
-        margin-right: 1.5em;
-
-        @include md-greater {
-            display: none;
-        }
-    }
-
+    
     svg{
         fill: v.$grayish-violet;
         height: 20px;
     }
     & :hover{
-            cursor: pointer;
-        }
+        cursor: pointer;
+    }
+}
+.mainNavLinks {
+    border: 1px solid red;
+    display: flex;
+    list-style-type: none;
+    margin: 2em;
+    width: 40em;
+    height: 2em;
+    justify-content: space-between;
+
+    @include md {
+    display: none;
+}
+
+.navWrapper {
+    border: 1px solid hotpink;
+    display: flex;
+}
+
+}
+.IconWrapper{
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 25px;
+    margin-top: 1.85em;
+    margin-right: 1.5em;
+
+    @include md-greater {
+        display: none;
+    }
 }

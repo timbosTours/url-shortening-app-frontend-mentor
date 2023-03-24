@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import DropDownMenu from '../DropdownMenu/DropDownMenu'
+import DropDownMenu from '../DropdownMenu/DropdownMenu'
 import styles from './Navbar.module.scss'
 
 

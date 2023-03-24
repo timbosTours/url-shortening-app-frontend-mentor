@@ -10,11 +10,20 @@
     right: 1.5em;
     border-radius: 10px;
 
+    @include md-greater {
+        display: none;
+    }
+
 
     nav {
         margin: .5em;
         width: 18em;
         // border: 1px solid red;
+
+        @include xs {
+            width: 10em;
+        }
+
     }
     ul {
         margin: 1em;
@@ -41,9 +50,6 @@
         padding-bottom: 2.5em;
     }
 
-.loginButton {
-    
-}
 
 .signUpButton {
     background-color: v.$cyan;
