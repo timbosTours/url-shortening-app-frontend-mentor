@@ -22,20 +22,25 @@
     }
 }
 .mainNavLinks {
-    border: 1px solid red;
     display: flex;
     list-style-type: none;
-    margin: 2em;
-    width: 40em;
+    margin-top: 1.8em;
+    width: 90%;
     height: 2em;
     justify-content: space-between;
+
+    a {
+        color: v.$grayish-violet;
+        font-size: smaller;
+        font-weight: 400;
+        margin: 1em;
+    }
 
     @include md {
     display: none;
 }
 
 .navWrapper {
-    border: 1px solid hotpink;
     display: flex;
 }
 
@@ -52,5 +57,16 @@
 
     @include md-greater {
         display: none;
+    }
+}
+.signUpMain {
+    background-color: v.$cyan;
+    margin-right: 7em;
+    border-radius: 20px;
+    padding-left: .5em;
+    padding-right: .5em;
+
+    a {
+        color: white;
     }
 }

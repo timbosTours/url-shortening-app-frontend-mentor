@@ -19,7 +19,7 @@ function Navbar() {
                     </div>
                     <div className={styles.navWrapper}>
                 <li><Link href="/">Login</Link></li>
-                        <li><Link href="/">Sign Up</Link></li>
+                        <li className={styles.signUpMain}><Link href="/">Sign Up</Link></li>
                     </div>
             </ul>
             </nav>
