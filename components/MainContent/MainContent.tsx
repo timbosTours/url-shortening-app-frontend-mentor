@@ -1,11 +1,11 @@
 import Link from 'next/link'
 import React from 'react'
 import MyForm from '../MyForm/MyForm'
-import styles from './maincontent.module.scss'
+import styles from './MainContent.module.scss'
 
 function MainContent() {
   return (
-    <div className={styles.maincontent}>
+    <div className={styles.mainContent}>
       <MyForm/>
       <div  tabIndex={-1}>
       <h2 tabIndex={0}>Advanced Statistics</h2>

@@ -1,5 +1,9 @@
-.maincontent{
+@use '../../styles/variables' as v;
+
+.mainContent{
     justify-content: center;
     align-items: center;
     text-align: center;
+    background-color: v.$light-gray-violet;
+    margin-top: 4em;
 }

@@ -1,13 +1,39 @@
+@use '../../styles/variables' as v;
 @import '../../styles/breakpoints';
 
 .myform {
+    height: 8em;
+    margin: 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url('../../public/images/bg-shorten-mobile.svg');
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 75%;
+    background-color: v.$dark-violet;
+    border-radius: 10px;
+    position: relative;
+    top: -4em;
+
     input {
-        width: 10em;
+        width: 90%;
+        border-radius: 3px;
+        border: none;
+        margin: .5em;
+        height: 2.5em;
+        font-size: smaller;
     }
     button {
-        color: purple;
-        
-
+        background-color: v.$cyan;
+        color: white;
+        width: 90%;
+        border-radius: 3px;
+        border: none;
+        margin: .5em;    
+        height: 2.5em;
     }
 
 
