@@ -4,6 +4,7 @@ import axios from 'axios'
 import styles from './MyForm.module.scss'
 
 
+
 interface Data {
   input: string
   output: string
@@ -17,10 +18,11 @@ function MyForm() {
 
 
     useEffect(() => {
-    const storedData = localStorage.getItem("data");
+      const storedData = localStorage.getItem("links");
     if (storedData) {
       setData(JSON.parse(storedData));
     }
+      console.log('function ran')
   }, []);
 
 function setStore(searchLink: string, shortLink: string) {
@@ -45,7 +47,7 @@ function setStore(searchLink: string, shortLink: string) {
           searchLink.current = data.text
           shortLink.current = resp.data.result.short_link
           setData([...returnedData,{ input: searchLink.current, output: shortLink.current }])
-          setStore(JSON.stringify(searchLink), JSON.stringify(shortLink))
+          setStore(JSON.stringify(searchLink.current), JSON.stringify(shortLink.current))
       } catch (error: any) {
         console.log(error)
       }
