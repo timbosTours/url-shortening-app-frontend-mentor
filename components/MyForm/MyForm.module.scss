@@ -19,6 +19,7 @@
     top: -4em;
     margin-bottom: 0;
 
+
     input {
         width: 90%;
         border-radius: 3px;
@@ -27,6 +28,7 @@
         height: 2.5em;
         font-size: smaller;
         height: 3em;
+        
     }
     button {
         background-color: v.$cyan;
@@ -36,7 +38,7 @@
         border: none;
         margin: .5em;    
         height: 3em;
-
+        cursor: pointer;
     }
 
 
@@ -74,4 +76,6 @@
     color: white;
     padding: .5em;
     margin: .5em;
+    cursor: pointer;
+    
 }

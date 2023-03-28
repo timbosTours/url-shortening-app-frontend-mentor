@@ -1,6 +1,10 @@
 import Link from 'next/link'
 import React from 'react'
 import MyForm from '../MyForm/MyForm'
+import BlueLine from './BlueLine'
+import BrandRecIcon from './BrandRecIcon'
+import DetailedRecordsIcon from './DetailedRecordsIcon'
+import FullyCustomIcon from './FullyCustomIcon'
 import styles from './MainContent.module.scss'
 
 function MainContent() {
@@ -9,23 +13,34 @@ function MainContent() {
       <MyForm/>
       <div  tabIndex={-1}>
       <h2 tabIndex={0}>Advanced Statistics</h2>
-        <p tabIndex={0}>Track how your links are performing accross the web with our advanced statistics dashbaord.</p>
+        <p className={styles.textWrapper} tabIndex={0}>Track how your links are performing accross the web with our advanced statistics dashbaord.</p>
       </div>
       <div>
-        <span>
+        <div className={styles.mainTextContent}>
+
+            <BrandRecIcon />
+
           <h3 tabIndex={0}>Brand Recognition</h3>
           <p tabIndex={0}>Boost your brand recognition with each click. Generic links don't mean a thing. Branded links help instil confidence in your content.</p>
-        </span>
-        <span>
+        </div>
+          <BlueLine/>
+        <div className={styles.mainTextContent}>
+
+            <DetailedRecordsIcon />
+
           <h3 tabIndex={0}>Detailed Records</h3>
           <p tabIndex={0}>Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions.</p>
-        </span>
-        <span>
+        </div>
+        <BlueLine/>
+        <div className={styles.mainTextContent}>
+
+            <FullyCustomIcon />
+
           <h3 tabIndex={0}>Fully Customizable</h3>
           <p tabIndex={0}>Improve brand awareness and content discoverability through customizable links, supercharging audience engagement.</p>
-        </span>
+        </div>
       </div>
-      <div>
+      <div className={styles.boostLinks}>
         <h2 tabIndex={0}>Boost your links today</h2>
         <Link href="/">Get Started</Link>
       </div>

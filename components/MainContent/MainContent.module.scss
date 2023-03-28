@@ -6,3 +6,71 @@
     text-align: center;
     background-color: v.$light-gray-violet;
 }
+.textWrapper {
+    color: v.$gray;
+}
+
+.mainTextContent {
+    background-color: white;
+    margin: 1.5em;
+    margin-top: 6em;
+    padding-top: 2em;
+    border-radius: 8px;
+    
+    
+    svg {
+        background-color: v.$dark-violet;
+        padding: 1.5em;
+        border-radius: 50px;
+        position: relative;
+        top: -6.5em;
+    }
+    h3 {
+        margin-top: -4em;
+    }
+    p {
+        color: v.$gray;
+        margin:  1.5em;
+        padding-bottom: 3em;
+    }
+}
+
+.blueLine {
+    width: .8em;
+    height: 4em;
+    background-color: v.$cyan;
+    margin-top: -1.5em;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.boostLinks {
+    height: 18em;
+    background-image: url('../../public/images/bg-boost-mobile.svg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: v.$dark-violet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    
+    h2 {
+        color: white;
+    }
+    a{
+        background-color: v.$cyan;
+        margin: 1em;
+        padding: 1em 2em;
+        border-radius: 40px;
+        color: white;
+        font-size: large;
+        font-weight: 500;
+        letter-spacing: 1px;
+    }
+}
