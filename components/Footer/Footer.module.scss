@@ -1,3 +1,45 @@
+@use '../../styles/variables' as v;
+
+
 .footer {
-    color: hotpink;
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    background-color: v.$very-dark-blue;
+    height: 50em;
+    
+    .footHeader {
+        font-size: xx-large;
+    }
+    a, h3 {
+        color: white;
+        margin: .5em;
+        margin-top: 2em;
+    }
+
 }
+
+.localLinks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    
+    a {
+        color: v.$gray;
+        margin: 0.4em;
+    }
+
+    
+}
+
+.socialLinks {
+    svg {
+    margin: .5em;
+    margin-top: 2.5em;
+}
+}
+
