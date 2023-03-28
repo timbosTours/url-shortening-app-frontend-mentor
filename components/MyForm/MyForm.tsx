@@ -58,10 +58,10 @@ function setStore(searchLink: string, shortLink: string) {
 
       {returnedData.map((_data) => {
   return (
-    <div key={_data.output}>
-      <p>{ _data.input }</p>
-      <p>{_data.output}</p>
-      <button onClick={() => {navigator.clipboard.writeText(_data.output)}} >Copy!</button>
+    <div className={styles.shortLinks} key={_data.output}>
+      <p className={styles.inputLink}>{ _data.input.replaceAll('"', '') }</p>
+      <p className={styles.outputLink}>{_data.output.replaceAll('"', '')}</p>
+      <button className={styles.copyButton} onClick={() => {navigator.clipboard.writeText(_data.output.replaceAll('"', ''))}} >Copy!</button>
     </div>
   )
 })}

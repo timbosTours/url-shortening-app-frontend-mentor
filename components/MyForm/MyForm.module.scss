@@ -2,7 +2,7 @@
 @import '../../styles/breakpoints';
 
 .myform {
-    height: 8em;
+    height: 10em;
     margin: 1.5em;
     display: flex;
     flex-direction: column;
@@ -17,6 +17,7 @@
     border-radius: 10px;
     position: relative;
     top: -4em;
+    margin-bottom: 0;
 
     input {
         width: 90%;
@@ -25,6 +26,7 @@
         margin: .5em;
         height: 2.5em;
         font-size: smaller;
+        height: 3em;
     }
     button {
         background-color: v.$cyan;
@@ -33,8 +35,43 @@
         border-radius: 3px;
         border: none;
         margin: .5em;    
-        height: 2.5em;
+        height: 3em;
+
     }
 
 
+}
+.shortLinks{
+    border-radius: 5px;
+    background-color: white;
+    margin: 1.5em;
+    padding: .5em;
+    position: relative;
+    top: -4em;
+}
+
+.inputLink {
+    text-align: left;
+    float: left;
+    padding: .3em;
+    padding-left: .8em;
+    margin-left: -8px;
+    width: 102.75%;
+    border-bottom: 2px solid v.$light-gray-violet;
+}
+
+.outputLink {
+    text-align: left;
+    padding: .2em;
+    color: v.$cyan;
+    font-weight: 400;
+}
+.copyButton {
+    width: 90%;
+    border: none;
+    border-radius: 5px;
+    background-color: v.$cyan;
+    color: white;
+    padding: .5em;
+    margin: .5em;
 }
