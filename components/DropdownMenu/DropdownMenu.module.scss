@@ -10,7 +10,7 @@
     right: 1.5em;
     border-radius: 10px;
 
-    @include md-greater {
+    @include lg-greater {
         display: none;
     }
 
