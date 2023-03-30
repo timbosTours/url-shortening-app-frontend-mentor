@@ -19,6 +19,16 @@
     top: -4em;
     margin-bottom: 0;
 
+    @include md-greater {
+        margin: 4.5em;
+        flex-direction: row;
+    }
+
+    @include xxl-greater {
+        margin: 7em;
+        font-size:18px;
+    }
+
 
     input {
         width: 90%;
@@ -29,6 +39,11 @@
         font-size: smaller;
         height: 3em;
         
+
+        @include md-greater {
+            margin-left: 3em;
+            width: 72%;
+        }
     }
     button {
         background-color: v.$cyan;
@@ -39,6 +54,15 @@
         margin: .5em;    
         height: 3em;
         cursor: pointer;
+
+        @include md-greater {
+            width: 12.5%;
+            margin-right: 3em;
+        }
+
+        @include xxl-greater {
+            font-size: 15.3px;
+        }
     }
 
 
@@ -50,6 +74,12 @@
     padding: .5em;
     position: relative;
     top: -4em;
+
+    @include md-greater {
+        margin: 4.5em;
+        display: flex;
+        padding-top: 1.1em;
+    }
 }
 
 .inputLink {
@@ -60,6 +90,10 @@
     margin-left: -8px;
     width: 102.75%;
     border-bottom: 2px solid v.$light-gray-violet;
+
+    @include md-greater {
+        border: none;
+    }
 }
 
 .outputLink {
