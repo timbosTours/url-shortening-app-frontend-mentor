@@ -11,6 +11,11 @@
         font-size: x-large;
         margin: 1em;
         margin-left: 3em;
+
+        @include xxl-greater {
+            font-size: 34px;
+            margin-left: 3.5em;
+        }
         
     }
     
@@ -30,11 +35,19 @@
     height: 2em;
     justify-content: space-between;
 
+    @include xxl-greater {
+        margin-top: 3em;
+    }
+
     a {
         color: v.$grayish-violet;
         font-size: smaller;
         font-weight: 400;
         margin: 1em;
+
+        @include xxl-greater {
+            font-size: medium;
+        }
     }
 
     @include md {
@@ -71,4 +84,6 @@
     a {
         color: white;
     }
+
+
 }
