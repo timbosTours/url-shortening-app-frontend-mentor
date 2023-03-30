@@ -48,6 +48,11 @@ $breakpoints:  (
         @content;
     }
 }
+@mixin xxl-greater {
+    @media (min-width: map-get($breakpoints, 'xxl')) {
+        @content;
+    }
+}
 
 @mixin breakpoint($bp: 0) {
     @media (max-width: $bp) {
