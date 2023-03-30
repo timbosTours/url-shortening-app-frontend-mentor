@@ -22,6 +22,7 @@
     @include md-greater {
         margin: 4.5em;
         flex-direction: row;
+        height: 7em;
     }
 
     @include xxl-greater {
