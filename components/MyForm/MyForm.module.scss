@@ -45,6 +45,7 @@
             margin-left: 3em;
             width: 72%;
         }
+
     }
     button {
         background-color: v.$cyan;
@@ -63,6 +64,7 @@
 
         @include xxl-greater {
             font-size: 15.3px;
+            font-weight: 600;
         }
     }
 
@@ -80,6 +82,14 @@
         margin: 4.5em;
         display: flex;
         padding-top: 1.1em;
+        top: -4em;
+        margin-top: -3em;
+    }
+    
+    @include xxl-greater {
+        margin: 7.8em;
+        top: -11em;
+        margin-bottom: -7em;
     }
 }
 
@@ -93,7 +103,8 @@
     border-bottom: 2px solid v.$light-gray-violet;
 
     @include md-greater {
-        border: none;
+        border: 0;
+        margin-left: 0;
     }
 }
 
@@ -102,6 +113,12 @@
     padding: .2em;
     color: v.$cyan;
     font-weight: 400;
+
+    @include md-greater {
+        padding-top: .4em;
+        margin-right: 1em;
+
+    }
 }
 .copyButton {
     width: 90%;
@@ -112,5 +129,10 @@
     padding: .5em;
     margin: .5em;
     cursor: pointer;
-    
+
+
+    @include md-greater {
+        width: 12%;
+        margin: 0em;
+    }
 }
