@@ -11,11 +11,11 @@ function MainContent() {
   return (
     <div className={styles.mainContent}>
       <MyForm/>
-      <div  tabIndex={-1}>
+      <div className={styles.advancedStatistics} tabIndex={-1}>
       <h2 tabIndex={0}>Advanced Statistics</h2>
         <p className={styles.textWrapper} tabIndex={0}>Track how your links are performing accross the web with our advanced statistics dashbaord.</p>
       </div>
-      <div>
+      <div className={styles.mainContentWrapper}>
         <div className={styles.mainTextContent}>
 
             <BrandRecIcon />
