@@ -16,7 +16,7 @@ function MainContent() {
         <p className={styles.textWrapper} tabIndex={0}>Track how your links are performing accross the web with our advanced statistics dashbaord.</p>
       </div>
       <div className={styles.mainContentWrapper}>
-        <div className={styles.mainTextContent}>
+        <div className={`${styles.mainTextContent} ${styles.brandRecognition} `}>
 
             <BrandRecIcon />
 
@@ -24,7 +24,7 @@ function MainContent() {
           <p tabIndex={0}>Boost your brand recognition with each click. Generic links don't mean a thing. Branded links help instil confidence in your content.</p>
         </div>
           <BlueLine/>
-        <div className={styles.mainTextContent}>
+        <div className={`${styles.mainTextContent} ${styles.detailedRecords} `}>
 
             <DetailedRecordsIcon />
 
@@ -32,7 +32,7 @@ function MainContent() {
           <p tabIndex={0}>Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions.</p>
         </div>
         <BlueLine/>
-        <div className={styles.mainTextContent}>
+        <div className={`${styles.mainTextContent} ${styles.fullyCustom} `}>
 
             <FullyCustomIcon />
 
