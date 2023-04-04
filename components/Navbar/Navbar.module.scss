@@ -10,7 +10,11 @@
         color: v.$very-dark-violet;
         font-size: x-large;
         margin: 1em;
-        margin-left: 3em;
+        
+        
+        @include md-greater {
+            margin-left: 3em;
+        }
 
         @include xxl-greater {
             font-size: 34px;

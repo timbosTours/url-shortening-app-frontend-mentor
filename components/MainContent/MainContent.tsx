@@ -31,7 +31,6 @@ function MainContent() {
           <h3 tabIndex={0}>Detailed Records</h3>
           <p tabIndex={0}>Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions.</p>
         </div>
-        <BlueLine/>
         <div className={`${styles.mainTextContent} ${styles.fullyCustom} `}>
 
             <FullyCustomIcon />
