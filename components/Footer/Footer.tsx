@@ -8,30 +8,32 @@ function Footer() {
       <h2>
         <Link className={styles.footHeader} href="/">Shortly</Link>
       </h2>
+      <div className={styles.columnWrapper}>
       <div>
         <h3 tabIndex={0}>Features</h3>
         <ul className={styles.localLinks}>
-        <Link href="/">Link Shortening</Link>
-        <Link href="/">Branded Links</Link>
-          <Link href="/">Analytics</Link>
+        <Link href="/"><h4 className={styles.footLinks}>Link Shortening</h4></Link>
+        <Link href="/"><h4 className={styles.footLinks}>Branded Links</h4></Link>
+          <Link href="/"><h4 className={styles.footLinks}>Analytics</h4></Link>
         </ul>
       </div>
       <div>
         <h3 tabIndex={0}>Resources</h3>
         <ul className={styles.localLinks}>
-        <Link href="/">Blog</Link>
-        <Link href="/">Developers</Link>
-          <Link href="/">Support</Link>
+        <Link href="/"><h4 className={styles.footLinks}>Blog</h4></Link>
+        <Link href="/"><h4 className={styles.footLinks}>Developers</h4></Link>
+          <Link href="/"><h4 className={styles.footLinks}>Support</h4></Link>
         </ul>
       </div>
       <div>
         <h3 tabIndex={0}>Company</h3>
         <ul className={styles.localLinks}>
-        <Link href="/">About</Link>
-        <Link href="/">Our Team</Link>
-        <Link href="/">Careers</Link>
-        <Link href="/">Contact</Link>
+        <Link href="/"><h4 className={styles.footLinks}>About</h4></Link>
+        <Link href="/"><h4 className={styles.footLinks}>Our Team</h4></Link>
+        <Link href="/"><h4 className={styles.footLinks}>Careers</h4></Link>
+        <Link href="/"><h4 className={styles.footLinks}>Contact</h4></Link>
         </ul>
+      </div>
       </div>
       <div>
         <ul className={styles.socialLinks}>

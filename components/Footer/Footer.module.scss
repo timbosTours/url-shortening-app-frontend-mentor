@@ -3,31 +3,57 @@
 
 
 .footer {
-        display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     flex-direction: column;
     background-color: v.$very-dark-blue;
     height: 50em;
-    
-    .footHeader {
-        font-size: x-large;
+
+    @include xxl-greater {
+        height: 30em;
     }
+    
+    
     a, h3 {
         color: white;
         margin: .5em;
         margin-top: 2em;
     }
 
-    ul {
+    
+    @include xxl-greater {
+        display: flex;
+        flex-direction: row;
+    }
+    
+}
+
+.footHeader {
+        font-size: x-large;
+
+        @include xxl-greater {
+            position: relative;
+            left: -6em;
+            bottom: 4.5em;
+            font-size: 32px;
+        }
+    }
+
+
+
+
+.columnWrapper {
 
     @include md-greater {
+        display: flex;
         flex-direction: row;
+        text-align: left;
+        
     }
 }
 
-}
 
 .localLinks {
     display: flex;
@@ -35,14 +61,30 @@
     align-items: center;
     text-align: center;
     flex-direction: column;
-    
+
     a {
         color: v.$gray;
         margin: 0.4em;
         font-size: medium;
     }
+    @include md-greater {
+        margin: 3em;
+        margin-left: 0.6em;
+        display: block;
+        text-align: left;
+    }
 
-    
+    @include xxl-greater {
+        margin-right: 4em;
+    }
+
+}
+
+.footLinks {
+    font-weight: 400;
+    @include md-greater {
+        text-align: left;
+    }
 }
 
 .socialLinks {
@@ -50,5 +92,10 @@
     margin: .5em;
     margin-top: 2.5em;
 }
+ @include xxl-greater {
+    position: relative;
+    left: 6em;
+    bottom: 10em;
+ }
 }
 
