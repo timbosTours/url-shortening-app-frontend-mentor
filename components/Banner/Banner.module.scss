@@ -1,5 +1,6 @@
 @use'../../styles/variables' as v;
 @import '../../styles/breakpoints';
+@import '../../styles/mixins';
 
 .banner {
     justify-content: center;
@@ -112,5 +113,8 @@
         padding-right: 2.5em;
     }
 
+    &:hover {
+    @include opacity()
     }
+}
 }

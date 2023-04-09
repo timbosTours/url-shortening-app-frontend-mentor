@@ -1,5 +1,6 @@
 @use'../../styles/variables' as v;
 @import '../../styles/breakpoints';
+@import '../../styles/mixins';
 
 .navbar {
     display: flex;
@@ -46,8 +47,13 @@
     a {
         color: v.$grayish-violet;
         font-size: smaller;
-        font-weight: 400;
+        font-weight: 500;
         margin: 1em;
+
+        &:hover {
+            cursor: pointer;
+            color: v.$very-dark-blue
+        }
 
         @include xxl-greater {
             font-size: medium;
@@ -88,6 +94,14 @@
     a {
         color: white;
     }
+    
+    &:hover {
+        a {
+            color: white;
+        }
+        @include opacity()
 
+        
+    }
 
 }

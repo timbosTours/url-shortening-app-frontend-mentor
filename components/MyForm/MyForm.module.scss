@@ -1,5 +1,6 @@
 @use '../../styles/variables' as v;
 @import '../../styles/breakpoints';
+@import '../../styles/mixins';
 
 .myform {
     height: 10em;
@@ -74,6 +75,11 @@
             font-size: 15.3px;
             font-weight: 600;
         }
+
+        &:hover {
+            @include opacity (0.8)
+            
+        }
     }
 
 
@@ -143,6 +149,10 @@
     @include md-greater {
         width: 12%;
         margin: 0em;
+    }
+
+    &:hover{
+        @include opacity()
     }
 }
 .errorMessage {

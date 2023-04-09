@@ -1,5 +1,6 @@
 @use '../../styles/variables' as v;
 @import '../../styles/breakpoints';
+@import '../../styles/mixins';
 
 
 .footer {
@@ -20,6 +21,10 @@
         color: white;
         margin: .5em;
         margin-top: 2em;
+
+        &:hover {
+            color: v.$cyan;
+        }
     }
 
     
@@ -97,5 +102,6 @@
     left: 6em;
     bottom: 10em;
  }
+ 
 }
 
