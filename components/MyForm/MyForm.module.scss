@@ -77,7 +77,9 @@
         }
 
         &:hover {
-            @include opacity (0.8)
+            background-color: lighten($color: v.$cyan, $amount: 20%);
+            @include opacity (0.9);
+            color: brightness(170%) white;
             
         }
     }
@@ -152,8 +154,13 @@
     }
 
     &:hover{
-        @include opacity()
+
+        @include opacity(); 
     }
+
+}
+.clicked {
+    background-color: v.$dark-violet;
 }
 .errorMessage {
     color: red;

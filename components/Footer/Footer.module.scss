@@ -17,14 +17,17 @@
     }
     
     
-    a, h3 {
+    h3 {
         color: white;
         margin: .5em;
         margin-top: 2em;
 
-        &:hover {
-            color: v.$cyan;
-        }
+    }
+    a{
+        color: white;
+        margin: .5em;
+        margin-top: 2em;
+
     }
 
     
@@ -72,6 +75,11 @@
         margin: 0.4em;
         font-size: medium;
     }
+    
+    a:hover {
+            color: v.$cyan;
+        }
+
     @include md-greater {
         margin: 3em;
         margin-left: 0.6em;
@@ -93,15 +101,21 @@
 }
 
 .socialLinks {
+
+    @include xxl-greater {
+       position: relative;
+       left: 6em;
+       bottom: 10em;
+    }
     svg {
     margin: .5em;
     margin-top: 2.5em;
+    fill: white;
+}   
+    a:hover {
+            svg {
+        fill: v.$cyan;
 }
- @include xxl-greater {
-    position: relative;
-    left: 6em;
-    bottom: 10em;
- }
- 
+}
 }
 

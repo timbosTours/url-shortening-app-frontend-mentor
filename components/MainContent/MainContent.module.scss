@@ -177,7 +177,10 @@
 
         &:hover {
             cursor: pointer;
-            @include opacity(0.8)
+            background-color: lighten($color: v.$cyan, $amount: 25%);
+            @include opacity (0.9);
+            color: brightness(170%) white;
+            
         }
     }
 

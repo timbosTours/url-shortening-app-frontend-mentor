@@ -8,12 +8,12 @@ interface Data {
   output: string
 }
 
-
 function MyForm() {
   const { register, handleSubmit, formState: { errors } } = useForm()
   let searchLink = useRef<string>("")
   let shortLink = useRef<string>("")
   const [returnedData, setData] = useState<Data[]>([])
+  const [clickedIndex, setClickedIndex] = useState(-1);
 
   useEffect(() => {
     const storedData = localStorage.getItem("links");
@@ -36,17 +36,16 @@ function MyForm() {
 
   return (
     <>
-        <form
-        className={styles.myform} onSubmit={handleSubmit(async (data) => {
+      <form className={styles.myform} onSubmit={handleSubmit(async (data) => {
           try {
             const resp = await axios.post(`https://api.shrtco.de/v2/shorten?url=${data.text}`);
-          searchLink.current = data.text
-          shortLink.current = resp.data.result.short_link
-          setData([...returnedData,{ input: searchLink.current, output: shortLink.current }])
-          setStore(JSON.stringify(searchLink.current), JSON.stringify(shortLink.current))
-        } catch (error: any) {
-          console.log(error)
-        }
+            searchLink.current = data.text
+            shortLink.current = resp.data.result.short_link
+            setData([...returnedData,{ input: searchLink.current, output: shortLink.current }])
+            setStore(JSON.stringify(searchLink.current), JSON.stringify(shortLink.current))
+          } catch (error: any) {
+            console.log(error)
+          }
       })}> 
         <input {...register("text", {
               required: true,
@@ -59,12 +58,15 @@ function MyForm() {
         <button type='submit'>Shorten It!</button>
       </form>
 
-      {returnedData.map((_data) => {
+      {returnedData.map((data, index) => {
         return (
-          <div className={styles.shortLinks} key={_data.output}>
-            <p className={styles.inputLink}>{ _data.input.replaceAll('"', '') }</p>
-            <p className={styles.outputLink}>{_data.output.replaceAll('"', '')}</p>
-            <button className={styles.copyButton} onClick={() => {navigator.clipboard.writeText(_data.output.replaceAll('"', ''))}} >Copy!</button>
+          <div className={styles.shortLinks} key={data.output}>
+            <p className={styles.inputLink}>{ data.input.replaceAll('"', '') }</p>
+            <p className={styles.outputLink}>{data.output.replaceAll('"', '')}</p>
+            <button className={`${styles.copyButton} ${clickedIndex === index ? styles.clicked : ''}`} onClick={() => {
+              setClickedIndex(index);
+              navigator.clipboard.writeText(data.output.replaceAll('"', ''))
+            }}>Copy!</button>
           </div>
         )
       })}
