@@ -3,29 +3,27 @@ import { useForm } from 'react-hook-form'
 import axios from 'axios'
 import styles from './MyForm.module.scss'
 
-
-
 interface Data {
   input: string
   output: string
 }
 
+
 function MyForm() {
-  const { register, handleSubmit } = useForm()
+  const { register, handleSubmit, formState: { errors } } = useForm()
   let searchLink = useRef<string>("")
   let shortLink = useRef<string>("")
   const [returnedData, setData] = useState<Data[]>([])
 
-
-    useEffect(() => {
-      const storedData = localStorage.getItem("links");
+  useEffect(() => {
+    const storedData = localStorage.getItem("links");
     if (storedData) {
       setData(JSON.parse(storedData));
     }
       console.log('function ran')
   }, []);
 
-function setStore(searchLink: string, shortLink: string) {
+  function setStore(searchLink: string, shortLink: string) {
     const existingData = localStorage.getItem("links")
     if (existingData) {
       const newData = JSON.parse(existingData)
@@ -36,35 +34,40 @@ function setStore(searchLink: string, shortLink: string) {
     }
   }
 
-
   return (
-
     <>
-    <form className={styles.myform} onSubmit={handleSubmit(async (data) => {
-        
-        try {
-          const resp = await axios.post(`https://api.shrtco.de/v2/shorten?url=${data.text}`);
+        <form
+        className={styles.myform} onSubmit={handleSubmit(async (data) => {
+          try {
+            const resp = await axios.post(`https://api.shrtco.de/v2/shorten?url=${data.text}`);
           searchLink.current = data.text
           shortLink.current = resp.data.result.short_link
           setData([...returnedData,{ input: searchLink.current, output: shortLink.current }])
           setStore(JSON.stringify(searchLink.current), JSON.stringify(shortLink.current))
-      } catch (error: any) {
-        console.log(error)
-      }
-    })}> 
-      <input {...register("text") } placeholder=" Shorten a link here..." />
+        } catch (error: any) {
+          console.log(error)
+        }
+      })}> 
+        <input {...register("text", {
+              required: true,
+              pattern: {
+                value: /[-a-zA-Z0-9@:%._\+~#=]{1, 256}\.[a-zA-Z0-9()]{1, 6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/,
+                message: 'Please add a link'
+              }
+        })} placeholder=" Shorten a link here..." />
+        {errors.text && <p className={styles.errorMessage}>Please add a link</p>}
         <button type='submit'>Shorten It!</button>
       </form>
 
       {returnedData.map((_data) => {
-  return (
-    <div className={styles.shortLinks} key={_data.output}>
-      <p className={styles.inputLink}>{ _data.input.replaceAll('"', '') }</p>
-      <p className={styles.outputLink}>{_data.output.replaceAll('"', '')}</p>
-      <button className={styles.copyButton} onClick={() => {navigator.clipboard.writeText(_data.output.replaceAll('"', ''))}} >Copy!</button>
-    </div>
-  )
-})}
+        return (
+          <div className={styles.shortLinks} key={_data.output}>
+            <p className={styles.inputLink}>{ _data.input.replaceAll('"', '') }</p>
+            <p className={styles.outputLink}>{_data.output.replaceAll('"', '')}</p>
+            <button className={styles.copyButton} onClick={() => {navigator.clipboard.writeText(_data.output.replaceAll('"', ''))}} >Copy!</button>
+          </div>
+        )
+      })}
     </>
   )
 }
