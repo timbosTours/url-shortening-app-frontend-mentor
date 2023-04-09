@@ -50,6 +50,7 @@
 
         @include md-greater {
             margin-left: 3em;
+            margin-bottom: 0.5em;
             width: 72%;
         }
 
@@ -149,4 +150,10 @@
     font-size: smaller;
     position: absolute;
     left: 2.5em;
+    font-style: italic;
+
+    @include md-greater {
+        bottom: 0.75em;
+        left: 6em;
+    }
 }
