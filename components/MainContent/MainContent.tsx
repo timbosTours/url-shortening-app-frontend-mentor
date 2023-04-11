@@ -41,7 +41,7 @@ function MainContent() {
       </div>
       <div className={styles.boostLinks}>
         <h2 tabIndex={0}>Boost your links today</h2>
-        <Link href="/">Get Started</Link>
+        <button className={styles.getStarted}>Get Started</button>
       </div>
     </div>
   )

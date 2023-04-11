@@ -190,3 +190,42 @@
         
     }
 }
+
+    .getStarted{
+        background-color: v.$cyan;
+        padding: 1em;
+        padding-left: 2em;
+        padding-right: 2em;
+        margin-top: 1em;
+        text-align: center;
+        color: white;
+        border-radius: 30px;
+        font-size: large;
+        letter-spacing: 0.5px;
+        font-weight: 500;
+        border: none;
+        cursor: pointer;
+
+                @include md-greater {
+            font-size: small;
+            padding: 0.8em;
+            padding-left: 2em;
+            padding-right: 2em;
+    }
+
+    @include xxl-greater {
+        // top: 30em;
+        // left: 8em;
+        font-size: medium;
+        padding: 0.8em;
+        padding-left: 2.5em;
+        padding-right: 2.5em;
+    }
+
+    &:hover {
+    background-color: lighten($color: v.$cyan, $amount: 20%);
+            @include opacity (0.9);
+            color: brightness(150%) white;
+    }
+}
+    
