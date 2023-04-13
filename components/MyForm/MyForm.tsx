@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useRef, useEffect, useState, RefObject } from 'react'
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
 import styles from './MyForm.module.scss'
@@ -7,8 +7,13 @@ interface Data {
   input: string
   output: string
 }
+export interface MyFormProps {
+  inputRef: RefObject<HTMLInputElement>;
+}
 
-function MyForm() {
+
+
+function MyForm({ inputRef }: MyFormProps) {
   const { register, handleSubmit, formState: { errors } } = useForm()
   let searchLink = useRef<string>("")
   let shortLink = useRef<string>("")
@@ -53,8 +58,8 @@ function MyForm() {
                 value: /[-a-zA-Z0-9@:%._\+~#=]{1, 256}\.[a-zA-Z0-9()]{1, 6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/,
                 message: 'Please add a link'
               }
-        })} placeholder=" Shorten a link here..." />
-        {errors.text && <p className={styles.errorMessage}>Please add a link</p>}
+        })} placeholder=" Shorten a link here..." ref={inputRef}/>
+        {errors.text && <p className={styles.errorMessage} >Please add a link</p>}
         <button type='submit'>Shorten It!</button>
       </form>
 
