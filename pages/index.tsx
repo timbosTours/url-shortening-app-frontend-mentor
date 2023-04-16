@@ -1,12 +1,9 @@
 import Head from 'next/head'
-import { Poppins } from '@next/font/google'
 import styles from '@/styles/Home.module.scss'
 import Banner from '@/components/Banner/Banner'
 import MainContent from '@/components/MainContent/MainContent'
 import Footer from '@/components/Footer/Footer'
 
-
-const poppins = Poppins({ subsets: ['latin-ext'], weight: ["500", "700"] })
 
 export default function Home() {
   return (

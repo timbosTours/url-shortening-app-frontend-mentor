@@ -1,19 +1,22 @@
-import React, { useRef, useEffect, useState, RefObject } from 'react'
+import React, { useRef, useEffect, useState, ForwardedRef } from 'react'
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
 import styles from './MyForm.module.scss'
+
 
 interface Data {
   input: string
   output: string
 }
-export interface MyFormProps {
-  inputRef: RefObject<HTMLInputElement>;
+export interface MyFormProps extends React.HTMLProps<HTMLFormElement> {
+  forwardedRef?: ForwardedRef<HTMLFormElement>
+  inputRef: ForwardedRef<HTMLInputElement>;
 }
 
 
-
-function MyForm({ inputRef }: MyFormProps) {
+function MyForm(
+  { inputRef }: MyFormProps)
+{
   const { register, handleSubmit, formState: { errors } } = useForm()
   let searchLink = useRef<string>("")
   let shortLink = useRef<string>("")
@@ -25,7 +28,7 @@ function MyForm({ inputRef }: MyFormProps) {
     if (storedData) {
       setData(JSON.parse(storedData));
     }
-      console.log('function ran')
+
   }, []);
 
   function setStore(searchLink: string, shortLink: string) {
@@ -41,26 +44,27 @@ function MyForm({ inputRef }: MyFormProps) {
 
   return (
     <>
-      <form className={styles.myform} onSubmit={handleSubmit(async (data) => {
-          try {
-            const resp = await axios.post(`https://api.shrtco.de/v2/shorten?url=${data.text}`);
-            searchLink.current = data.text
+      <form className={styles.myform} onSubmit={handleSubmit(async (_data) => {
+        try {
+          const resp = await axios.post(`https://api.shrtco.de/v2/shorten?url=${_data.text}`);
+          console.log(_data.text);
+            searchLink.current = _data.text
             shortLink.current = resp.data.result.short_link
             setData([...returnedData,{ input: searchLink.current, output: shortLink.current }])
             setStore(JSON.stringify(searchLink.current), JSON.stringify(shortLink.current))
+            
           } catch (error: any) {
             console.log(error)
-          }
-      })}> 
+        }})}> 
         <input {...register("text", {
-              required: true,
+              required: false,
               pattern: {
-                value: /[-a-zA-Z0-9@:%._\+~#=]{1, 256}\.[a-zA-Z0-9()]{1, 6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/,
+                value: /^[a-zA-Z0-9][a-zA-Z0-9-]{0,61}[a-zA-Z0-9](?:\.[a-zA-Z]{2,})+$/,
                 message: 'Please add a link'
               }
-        })} placeholder=" Shorten a link here..." ref={inputRef}/>
+        })} ref={inputRef} placeholder=" Shorten a link here..." />
         {errors.text && <p className={styles.errorMessage} >Please add a link</p>}
-        <button type='submit'>Shorten It!</button>
+        <button type="submit">Shorten It!</button>
       </form>
 
       {returnedData.map((data, index) => {

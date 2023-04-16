@@ -1,34 +1,29 @@
-import React, { useEffect, useRef, forwardRef } from 'react'
+import React, { useRef, forwardRef } from 'react'
 import MyForm from '../MyForm/MyForm'
 import BlueLine from './BlueLine'
 import BrandRecIcon from './BrandRecIcon'
 import DetailedRecordsIcon from './DetailedRecordsIcon'
 import FullyCustomIcon from './FullyCustomIcon'
 import styles from './MainContent.module.scss'
-import { MyFormProps } from '../MyForm/MyForm'
+// import { MyFormProps } from '../MyForm/MyForm'
 
 
-const MyFormWithRef = forwardRef<HTMLInputElement, MyFormProps>((props, ref) => (
-  <MyForm {...props} ref={ref} />
-));
+// const MyFormWithRef = forwardRef<HTMLInputElement, MyFormProps>((props, ref) => (
+//   <MyForm {...props} inputRef={ref}/>
+// ));
 
 function MainContent() {
-  const formRef = useRef<HTMLInputElement>(null);
+  // const formRef = useRef<HTMLInputElement>(null);
 
-  useEffect(() => {
-    formRef.current?.focus()
-  }, []);
-  
-
-  const focusInput = () => {
-    formRef.current?.focus();
-    console.log('clicked');
-  };
+  // const focusInput = () => {
+  //   formRef.current?.focus();
+  // };
   
   return (
 
     <div className={styles.mainContent}>
-      <MyFormWithRef inputRef={formRef}/>
+      {/* <MyFormWithRef inputRef={formRef} /> */}
+      <MyForm/>
       <div className={styles.advancedStatistics} tabIndex={-1}>
       <h2 tabIndex={0}>Advanced Statistics</h2>
         <p className={styles.textWrapper} tabIndex={0}>Track how your links are performing accross the web with our advanced statistics dashbaord.</p>
@@ -59,7 +54,7 @@ function MainContent() {
       </div>
       <div className={styles.boostLinks}>
         <h2 tabIndex={0}>Boost your links today</h2>
-        <button onClick={focusInput} className={styles.getStarted}>Get Started</button>
+        <button className={styles.getStarted}>Get Started</button>
       </div>
     </div>
   )

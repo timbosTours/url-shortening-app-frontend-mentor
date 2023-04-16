@@ -1,11 +1,11 @@
 import React from 'react'
 import Navbar from '../Navbar/Navbar'
-import Link from 'next/link'
 import styles from './Banner.module.scss'
 import BannerImage from './Banner-bg-img'
 
 
 function Banner() {
+
     return (
         <div className={styles.banner}>
             <Navbar />
