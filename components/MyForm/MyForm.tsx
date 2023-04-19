@@ -1,23 +1,25 @@
-import React, { useRef, useEffect, useState, ForwardedRef } from 'react'
+import React, { useRef, useEffect, useState, ForwardedRef, Ref } from 'react'
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
 import styles from './MyForm.module.scss'
+
+//  forward ref is filling the input value will null??? perhaps just pass the focus with useIperatovehandle and maybe useState instead of useRef
 
 
 interface Data {
   input: string
   output: string
 }
-export interface MyFormProps extends React.HTMLProps<HTMLFormElement> {
-  forwardedRef?: ForwardedRef<HTMLFormElement>
-  inputRef: ForwardedRef<HTMLInputElement>;
-}
+// export interface MyFormProps extends React.HTMLProps<HTMLFormElement> {
+//   forwardedRef?: ForwardedRef<HTMLFormElement>
+//   inputRef: ForwardedRef<HTMLInputElement>;
+// }
 
 
 function MyForm(
-  { inputRef }: MyFormProps)
+)
 {
-  const { register, handleSubmit, formState: { errors } } = useForm()
+  const { register, handleSubmit, formState: { errors }} = useForm()
   let searchLink = useRef<string>("")
   let shortLink = useRef<string>("")
   const [returnedData, setData] = useState<Data[]>([])
@@ -30,6 +32,8 @@ function MyForm(
     }
 
   }, []);
+
+  
 
   function setStore(searchLink: string, shortLink: string) {
     const existingData = localStorage.getItem("links")
@@ -44,25 +48,26 @@ function MyForm(
 
   return (
     <>
-      <form className={styles.myform} onSubmit={handleSubmit(async (_data) => {
+      <form className={styles.myform} onSubmit={handleSubmit(async (data) => {
         try {
-          const resp = await axios.post(`https://api.shrtco.de/v2/shorten?url=${_data.text}`);
-          console.log(_data.text);
-            searchLink.current = _data.text
+          console.log(data.text)
+          const resp = await axios.post(`https://api.shrtco.de/v2/shorten?url=${data.text}`);
+          console.log(resp.data)
+            searchLink.current = data.text
             shortLink.current = resp.data.result.short_link
             setData([...returnedData,{ input: searchLink.current, output: shortLink.current }])
-            setStore(JSON.stringify(searchLink.current), JSON.stringify(shortLink.current))
+          setStore(JSON.stringify(searchLink.current), JSON.stringify(shortLink.current))
             
           } catch (error: any) {
             console.log(error)
         }})}> 
         <input {...register("text", {
-              required: false,
+              required: true,
               pattern: {
                 value: /^[a-zA-Z0-9][a-zA-Z0-9-]{0,61}[a-zA-Z0-9](?:\.[a-zA-Z]{2,})+$/,
                 message: 'Please add a link'
               }
-        })} ref={inputRef} placeholder=" Shorten a link here..." />
+        })} placeholder=" Shorten a link here..." />
         {errors.text && <p className={styles.errorMessage} >Please add a link</p>}
         <button type="submit">Shorten It!</button>
       </form>
