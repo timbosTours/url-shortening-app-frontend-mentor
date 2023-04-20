@@ -1,25 +1,17 @@
-import React, { useRef, useEffect, useState, ForwardedRef, Ref } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
 import styles from './MyForm.module.scss'
-
-//  forward ref is filling the input value will null??? perhaps just pass the focus with useIperatovehandle and maybe useState instead of useRef
 
 
 interface Data {
   input: string
   output: string
 }
-// export interface MyFormProps extends React.HTMLProps<HTMLFormElement> {
-//   forwardedRef?: ForwardedRef<HTMLFormElement>
-//   inputRef: ForwardedRef<HTMLInputElement>;
-// }
 
 
-function MyForm(
-)
-{
-  const { register, handleSubmit, formState: { errors }} = useForm()
+function MyForm() {
+  const { register, handleSubmit, formState: { errors }, setFocus } = useForm()
   let searchLink = useRef<string>("")
   let shortLink = useRef<string>("")
   const [returnedData, setData] = useState<Data[]>([])
@@ -32,6 +24,10 @@ function MyForm(
     }
 
   }, []);
+
+  useEffect(() => {
+    setFocus('text');
+  }, [setFocus])
 
   
 

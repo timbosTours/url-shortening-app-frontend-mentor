@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import MyForm from '../MyForm/MyForm'
 import BlueLine from './BlueLine'
 import BrandRecIcon from './BrandRecIcon'
@@ -6,11 +6,9 @@ import DetailedRecordsIcon from './DetailedRecordsIcon'
 import FullyCustomIcon from './FullyCustomIcon'
 import styles from './MainContent.module.scss'
 
-
-
-
-function MainContent() {
+function MainContent() { 
   
+
   return (
 
     <div className={styles.mainContent}>
