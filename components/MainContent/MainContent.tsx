@@ -5,8 +5,10 @@ import BrandRecIcon from './BrandRecIcon'
 import DetailedRecordsIcon from './DetailedRecordsIcon'
 import FullyCustomIcon from './FullyCustomIcon'
 import styles from './MainContent.module.scss'
+import Link from 'next/link'
 
-function MainContent() { 
+function MainContent() {
+
   
 
   return (
@@ -43,7 +45,7 @@ function MainContent() {
       </div>
       <div className={styles.boostLinks}>
         <h2 tabIndex={0}>Boost your links today</h2>
-        <button className={styles.getStarted}>Get Started</button>
+        <Link href={"/"} className={styles.getStarted}>Get Started</Link>
       </div>
     </div>
   )

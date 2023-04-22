@@ -4,6 +4,7 @@ import axios from 'axios'
 import styles from './MyForm.module.scss'
 
 
+
 interface Data {
   input: string
   output: string
@@ -11,24 +12,24 @@ interface Data {
 
 
 function MyForm() {
-  const { register, handleSubmit, formState: { errors }, setFocus } = useForm()
+  const { register, handleSubmit, setFocus, formState: { errors }} = useForm()
   let searchLink = useRef<string>("")
   let shortLink = useRef<string>("")
   const [returnedData, setData] = useState<Data[]>([])
   const [clickedIndex, setClickedIndex] = useState(-1);
-
+  
   useEffect(() => {
     const storedData = localStorage.getItem("links");
     if (storedData) {
       setData(JSON.parse(storedData));
     }
-
+    
   }, []);
 
   useEffect(() => {
-    setFocus('text');
-  }, [setFocus])
-
+    setFocus("text");
+  }, )
+  
   
 
   function setStore(searchLink: string, shortLink: string) {
@@ -60,7 +61,7 @@ function MyForm() {
         <input {...register("text", {
               required: true,
               pattern: {
-                value: /^[a-zA-Z0-9][a-zA-Z0-9-]{0,61}[a-zA-Z0-9](?:\.[a-zA-Z]{2,})+$/,
+                value: /(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9]/,
                 message: 'Please add a link'
               }
         })} placeholder=" Shorten a link here..." />
