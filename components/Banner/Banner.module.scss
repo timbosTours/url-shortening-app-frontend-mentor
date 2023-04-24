@@ -13,7 +13,7 @@
         margin-bottom: 16em;
     }
 
-    @include xxl {
+    @include xxl-greater {
         margin-bottom: 20em;
     }
     
