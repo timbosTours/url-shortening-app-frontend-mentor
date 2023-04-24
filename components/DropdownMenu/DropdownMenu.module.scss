@@ -54,8 +54,12 @@
 
 .signUpButton {
     background-color: v.$cyan;
-    padding: .6em 3em .6em 3em ;
+    padding: .6em 6em .6em 6em ;
     border-radius: 30px;
+    border: none;
+    color: white;
+    font-size: medium;
+    font-weight: 600;
 
     &:hover {
             background-color: lighten($color: v.$cyan, $amount: 20%);

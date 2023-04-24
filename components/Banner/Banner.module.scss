@@ -8,6 +8,7 @@
     text-align: center;
     margin-bottom: 10em;
 
+
     @include md-greater {
         margin-bottom: 16em;
     }
@@ -21,22 +22,26 @@
     justify-content: center;
     align-items: center;
     height: 100%; 
-    }
+}
 
-    svg {
+svg {
     width: 100%;
     z-index: -100;
+    overflow-x: hidden;
+    
+    @include md-greater {
+        width: 50%;
+        position: absolute;
+        right: -3em;
+        top: 5em;
+        max-height: 30em;
 
-        @include md-greater {
-            width: 50%;
-            position: absolute;
-            right: -3em;
-            top: 5em;
-            max-height: 30em;
+        clip-path: polygon(0 0, 92% 0, 92% 100%, 0% 100%);
         }
 
         @include xxl-greater {
         max-height: 40em;
+        clip-path: polygon(0 0, 95% 0, 95% 100%, 0% 100%);
     }
 
     }
