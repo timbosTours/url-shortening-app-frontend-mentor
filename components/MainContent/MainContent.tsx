@@ -12,7 +12,6 @@ function MainContent() {
   
 
   return (
-
     <div className={styles.mainContent}>
       <MyForm />
       <div className={styles.advancedStatistics} tabIndex={-1}>
@@ -20,15 +19,14 @@ function MainContent() {
         <p className={styles.textWrapper} tabIndex={0}>Track how your links are performing accross the web with our advanced statistics dashbaord.</p>
       </div>
       <div className={styles.mainContentWrapper}>
-        <div className={`${styles.mainTextContent} ${styles.brandRecognition} `}>
-
+        <div className={`${styles.mainTextContent} ${styles.brandRecognition}`}>
             <BrandRecIcon />
 
           <h3 tabIndex={0}>Brand Recognition</h3>
-          <p tabIndex={0}>Boost your brand recognition with each click. Generic links don't mean a thing. Branded links help instil confidence in your content.</p>
+          <p tabIndex={0}>Boost your brand recognition with each click. Generic links don&apos;t mean a thing. Branded links help instil confidence in your content.</p>
         </div>
           <BlueLine/>
-        <div className={`${styles.mainTextContent} ${styles.detailedRecords} `}>
+        <div className={`${styles.mainTextContent} ${styles.detailedRecords}`}>
 
             <DetailedRecordsIcon />
 
