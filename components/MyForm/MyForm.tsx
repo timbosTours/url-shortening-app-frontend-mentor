@@ -4,7 +4,6 @@ import axios from 'axios'
 import styles from './MyForm.module.scss'
 
 
-
 interface Data {
   input: string
   output: string
@@ -71,16 +70,16 @@ function MyForm() {
 
       {returnedData.map((data, index) => {
         return (
-          <div className={styles.shortLinks} key={data.output}>
-            <p className={styles.inputLink}>{ data.input.replaceAll('"', '') }</p>
-            <p className={styles.outputLink}>{data.output.replaceAll('"', '')}</p>
+          <div tabIndex={0} aria-label='shortend link' className={styles.shortLinks} key={data.output}>
+            <p tabIndex={0} className={styles.inputLink}>{ data.input.replaceAll('"', '') }</p>
+            <p tabIndex={0} className={styles.outputLink}>{data.output.replaceAll('"', '')}</p>
             <button className={`${styles.copyButton} ${clickedIndex === index ? styles.clicked : ''}`} onClick={() => {
               setClickedIndex(index);
               navigator.clipboard.writeText(data.output.replaceAll('"', ''))
             }}>Copy!</button>
           </div>
         )
-      })}
+      })} 
     </>
   )
 }
