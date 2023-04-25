@@ -19,7 +19,6 @@
     nav {
         margin: .5em;
         width: 18em;
-        // border: 1px solid red;
 
         @include xs {
             width: 12em;
@@ -28,20 +27,17 @@
     }
     ul {
         margin: 1em;
-        // border: 1px solid yellow;
 
     }
     li {
         list-style: none;
         margin: 2.1em;
-        // border: 1px solid hotpink;
         margin-left: 0em;
         margin-right: 0em;
     }
     a {
         
         color: white;
-        // border: 1px solid orange;
         
     }
     }  
